@@ -8,25 +8,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';  
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import 'hammerjs';
-import { MenuComponent } from './menu/menu.component';
-import { DishDetailComponent } from './dish-detail/dish-detail.component';
 
 import { DishService } from './services/dish.service';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MenuComponent,
-    DishDetailComponent,
-    HeaderComponent,
-    FooterComponent
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,6 +26,16 @@ import { FooterComponent } from './footer/footer.component';
     MatCardModule,
     MatButtonModule,
     FlexLayoutModule
+  ],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    MenuComponent,
+    AboutComponent,
+    ContactComponent,
+    HeaderComponent,
+    FooterComponent,
+    DishDetailComponent
   ],
   providers: [DishService],
   bootstrap: [AppComponent]
