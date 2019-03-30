@@ -23,6 +23,7 @@ import 'hammerjs';
 
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
+import { LeaderService } from './services/leader.service';
 
 @NgModule({
   imports: [
@@ -46,7 +47,10 @@ import { PromotionService } from './services/promotion.service';
     FooterComponent,
     DishDetailComponent
   ],
-  providers: [DishService, PromotionService],
+  providers: [DishService,
+    PromotionService,
+    LeaderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
