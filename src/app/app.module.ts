@@ -12,6 +12,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
@@ -46,6 +49,9 @@ import { LeaderService } from './services/leader.service';
     MatInputModule,
     MatCheckboxModule,
     FormsModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   declarations: [
