@@ -42,10 +42,10 @@
   </div>
 
   <div fxFlex fxFlexOffset="20px" class="form-size">
-    <h3>Send us your Feedback</h3>
-    <p>{{ feedbackForm.value | json }}  {{ feedbackForm.status | json }}</p>
+    <h2>Send us your Feedback</h2>
+    <!-- <p>{{ feedbackForm.value | json }}  {{ feedbackForm.status | json }}</p> -->
 
-    <form novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()">
+    <form novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()" *ngIf="!feedback && !feedbackcopy">
       <p>
         <mat-form-field class="half-width">
           <input matInput formControlName="firstname" type="text" placeholder="First Name" required>
@@ -107,6 +107,29 @@
       </p>
       <button mat-button type="submit" class="background-primary text-floral-white" [disabled]="feedbackForm.invalid">Submit</button>
     </form>
+
+     <div [hidden]="!feedback">
+      <h3>Submitting feedback</h3>
+      <mat-spinner></mat-spinner> <h4>Loading . . . Please Wait</h4>
+    </div>
+
+    <div *ngIf="feedbackcopy" [@expand]>
+      <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <h3>Your Feedback</h3>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-list>
+              Name: {{feedbackcopy.firstname}} {{feedbackcopy.lastname}} <br>
+              Tel. Number: {{feedbackcopy.telnum}} <br>
+              Email: {{feedbackcopy.email}} <br>
+              Feedback Message: {{feedbackcopy.message}} <br>
+            </mat-list>
+          </mat-card-content>
+      </mat-card>      
+    </div>
   </div>
 
 </div>
